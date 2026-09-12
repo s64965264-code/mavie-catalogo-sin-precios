@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta name="referrer" content="no-referrer"><base href="https://s64965264-code.github.io/mavie-catalogo/"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f9f5f0"><meta name="description" content="Mavie Beauty — catálogo online de maquillaje y belleza."><title>Mavie Beauty · Catálogo</title><style>@import url(https://s64965264-code.github.io/mavie-catalogo/%22https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=DM+Sans:wght@400;500;600;700&display=swap%22);
+:root { --cream: #f9f5f0; --cream-deep: #f1ece5; --ink: #050505; --muted: #817a73; --line: #ded8d1; --max: 1220px; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--ink); background: var(--cream); font-family: "DM Sans", Arial, sans-serif; font-size: 15px; line-height: 1.55; }
+body.locked { overflow: hidden; }
+a { color: inherit; text-decoration: none; }
+button, input { font: inherit; }
+button { color: inherit; }
+img { max-width: 100%; display: block; }
+.page-width { width: min(calc(100% - 64px), var(--max)); margin: 0 auto; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.skip-link { position: fixed; z-index: 100; top: 10px; left: 10px; padding: 8px 12px; background: var(--ink); color: white; transform: translateY(-150%); }.skip-link:focus { transform: translateY(0); }
+.site-header { position: relative; z-index: 10; display: flex; align-items: center; justify-content: space-between; width: min(calc(100% - 64px), var(--max)); min-height: 92px; margin: 0 auto; }
+.brand { width: 115px; }.brand img { width: 115px; height: 74px; object-fit: contain; }
+.main-nav { display: flex; gap: 43px; margin-left: 10%; color: #59534e; font-size: 12px; }.main-nav a, .footer-links a { transition: opacity .2s ease; }.main-nav a:hover, .footer-links a:hover { opacity: .48; }
+.header-actions { display: flex; align-items: center; gap: 23px; }.search-trigger { display: flex; align-items: center; gap: 8px; border: 0; padding: 0; background: transparent; cursor: pointer; color: #59534e; font-size: 11px; }.search-trigger svg, .search-field svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: 1.5; }
+.menu-trigger { display: none; border: 0; background: transparent; padding: 4px; cursor: pointer; }.menu-trigger span { display: block; width: 23px; height: 1px; margin: 5px; background: var(--ink); }.mobile-nav { display: none; }
+.hero { display: grid; grid-template-columns: .86fr 1.14fr; align-items: center; gap: clamp(40px, 8vw, 125px); padding-top: 54px; padding-bottom: 88px; }.hero-copy { padding-left: clamp(0px, 4vw, 58px); }.kicker { margin: 0 0 18px; color: var(--muted); font: 10px "DM Sans", sans-serif; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; }.kicker span { margin: 0 6px; }
+h1, h2 { margin: 0; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; letter-spacing: -.065em; line-height: .88; } h1 { margin-bottom: 29px; font-size: clamp(66px, 8vw, 112px); } h2 { font-size: clamp(53px, 6vw, 86px); } em { font-style: italic; font-weight: 500; }
+.hero-copy > p:not(.kicker) { max-width: 360px; margin: 0 0 31px; color: var(--muted); font-size: 13px; line-height: 1.8; }.primary-button, .light-button { display: inline-flex; align-items: center; justify-content: center; gap: 21px; padding: 15px 19px; border: 1px solid var(--ink); background: var(--ink); color: var(--cream); font-size: 11px; font-weight: 600; transition: transform .2s ease, opacity .2s ease; }.primary-button:hover, .light-button:hover { transform: translateY(-2px); opacity: .84; }.hero-meta { display: flex; align-items: center; gap: 11px; margin-top: 54px; color: var(--muted); font: 9px "DM Sans", sans-serif; letter-spacing: .07em; text-transform: uppercase; }.hero-meta i { width: 4px; height: 4px; border-radius: 50%; background: var(--ink); }
+.hero-logo-panel { position: relative; overflow: hidden; background: var(--cream-deep); }.hero-logo-panel img { width: 100%; aspect-ratio: 1.33; object-fit: cover; }.hero-label { display: flex; justify-content: space-between; padding: 12px 16px; color: var(--muted); font: 9px "DM Sans", sans-serif; letter-spacing: .08em; text-transform: uppercase; }.hero-label span:first-child { color: var(--ink); }
+.intro { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 24px 0; }.intro > div { display: flex; align-items: center; gap: 14px; border-right: 1px solid var(--line); padding-left: 3%; }.intro > div:last-child { border-right: 0; }.intro-number { color: var(--muted); font: 12px "Cormorant Garamond", Georgia, serif; }.intro p { margin: 0; font-size: 11px; line-height: 1.45; }
+.catalogue { padding-top: 133px; padding-bottom: 145px; }.section-heading { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 56px; }.section-heading > p { margin: 0 0 5px; color: var(--muted); font-size: 12px; line-height: 1.7; text-align: right; }.section-heading .kicker { margin-bottom: 15px; }
+.catalogue-tools { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 31px; }.category-tabs { display: flex; gap: 7px; flex-wrap: wrap; }.category-button { padding: 8px 13px; border: 1px solid transparent; background: transparent; cursor: pointer; color: var(--muted); font-size: 10px; }.category-button:hover, .category-button.active { border-color: var(--ink); color: var(--ink); }.category-button span { margin-left: 5px; color: #aaa39c; }
+.search-field { display: flex; align-items: center; gap: 7px; width: 190px; border-bottom: 1px solid var(--line); padding: 8px 0; color: var(--muted); }.search-field input { width: 100%; min-width: 0; border: 0; outline: 0; background: transparent; font-size: 11px; }.search-field input::placeholder { color: #a7a09a; }
+.product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 43px 19px; }.product-card { min-width: 0; cursor: pointer; }.product-image-wrap { position: relative; overflow: hidden; background: var(--cream-deep); }.product-image-wrap img { width: 100%; aspect-ratio: 1.335; object-fit: cover; transition: transform .4s ease; }.product-card:hover .product-image-wrap img { transform: scale(1.025); }.product-page { position: absolute; top: 13px; left: 13px; padding: 5px 7px; background: rgba(249,245,240,.85); color: var(--muted); font: 9px "DM Sans", sans-serif; }.product-info { display: flex; justify-content: space-between; gap: 10px; padding-top: 13px; }.product-info h3 { max-width: 85%; margin: 0; font: 500 24px/1.02 "Cormorant Garamond", Georgia, serif; }.product-price { color: var(--ink); font: 600 15px "Cormorant Garamond", Georgia, serif; white-space: nowrap; }.product-category { margin: 5px 0 0; color: var(--muted); font-size: 9px; text-transform: uppercase; letter-spacing: .08em; }.empty-state { margin: 45px 0 0; color: var(--muted); text-align: center; }
+.mavie-section { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(45px, 11vw, 170px); border-top: 1px solid var(--line); padding-top: 88px; padding-bottom: 150px; }.mavie-image { background: var(--cream-deep); }.mavie-image img { width: 100%; aspect-ratio: 1.1; object-fit: cover; }.mavie-copy { max-width: 405px; }.mavie-copy h2 { margin-bottom: 26px; }.mavie-copy > p:not(.kicker) { margin-bottom: 31px; color: var(--muted); font-size: 13px; line-height: 1.9; }.signature { font: italic 28px "Cormorant Garamond", Georgia, serif; }
+.contact { display: grid; grid-template-columns: 1fr .78fr; gap: 80px; align-items: end; background: var(--ink); color: var(--cream); padding-top: 82px; padding-bottom: 82px; }.contact .kicker { color: #bcb5ae; }.contact-copy { max-width: 286px; }.contact-copy p { margin: 0 0 28px; color: #b9b2ab; font-size: 12px; line-height: 1.8; }.light-button { border-color: var(--cream); background: var(--cream); color: var(--ink); }
+.footer { background: #111; color: var(--cream); }.footer-main { display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; gap: 30px; padding-top: 36px; padding-bottom: 36px; }.footer-main img { width: 95px; height: 58px; object-fit: contain; filter: invert(1); }.footer-main p { margin: 0; color: #aaa19a; font-size: 11px; }.footer-links { display: flex; justify-content: flex-end; gap: 25px; color: #d4ccc5; font-size: 10px; }.footer-bottom { display: flex; justify-content: space-between; border-top: 1px solid #333; padding-top: 15px; padding-bottom: 18px; color: #89827c; font-size: 9px; }
+.search-overlay, .product-overlay { position: fixed; z-index: 30; inset: 0; display: grid; place-items: start center; padding-top: 14vh; background: rgba(5,5,5,.58); opacity: 0; pointer-events: none; transition: opacity .2s ease; }.search-overlay.open, .product-overlay.open { opacity: 1; pointer-events: auto; }.search-dialog { width: min(calc(100% - 40px), 650px); padding: 27px 30px; background: var(--cream); }.dialog-top { display: flex; justify-content: space-between; margin-bottom: 22px; color: var(--muted); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }.dialog-top button, .dialog-close { border: 0; background: transparent; cursor: pointer; font-size: 27px; font-weight: 300; line-height: 1; }.search-dialog input { width: 100%; border: 0; border-bottom: 1px solid var(--ink); outline: 0; padding: 8px 0; background: transparent; font: 26px "Cormorant Garamond", Georgia, serif; }
+.product-overlay { place-items: center; padding: 20px; }.product-dialog { position: relative; display: grid; grid-template-columns: 1.15fr .85fr; width: min(100%, 950px); max-height: calc(100vh - 40px); overflow: auto; background: var(--cream); }.dialog-close { position: absolute; z-index: 2; top: 13px; right: 16px; }.dialog-image { background: var(--cream-deep); }.dialog-image img { width: 100%; height: 100%; object-fit: cover; align-self: stretch; }.dialog-info { align-self: center; padding: 52px 45px; }.dialog-info h2 { margin-bottom: 13px; font-size: clamp(46px, 5vw, 72px); }.dialog-price { margin-bottom: 22px; font: 28px "Cormorant Garamond", Georgia, serif; }.dialog-info > p:not(.kicker):not(.dialog-note) { margin-bottom: 28px; color: var(--muted); font-size: 12px; line-height: 1.9; }.dialog-note { margin: 20px 0 0; color: #a49b93; font-size: 9px; line-height: 1.5; }
+*:focus-visible { outline: 2px solid #8f7866; outline-offset: 3px; }
+@media (max-width: 900px) { .main-nav { margin-left: 0; }.hero { gap: 45px; }.product-grid { grid-template-columns: repeat(2, 1fr); gap: 35px 16px; }.mavie-section { gap: 45px; }.footer-main { grid-template-columns: 1fr 1fr; }.footer-main p { order: 3; grid-column: 1 / -1; }.footer-links { grid-column: 2; grid-row: 1; } }
+@media (max-width: 620px) { .page-width, .site-header { width: calc(100% - 32px); }.site-header { min-height: 76px; }.brand, .brand img { width: 92px; height: 64px; }.main-nav, .search-trigger span { display: none; }.menu-trigger { display: block; }.mobile-nav { position: absolute; top: 67px; right: 0; display: flex; width: 210px; flex-direction: column; padding: 5px; background: var(--cream); box-shadow: 0 15px 30px rgba(0,0,0,.13); opacity: 0; pointer-events: none; transform: translateY(-5px); transition: opacity .2s ease, transform .2s ease; }.mobile-nav.open { opacity: 1; pointer-events: auto; transform: translateY(0); }.mobile-nav a { border-bottom: 1px solid var(--line); padding: 13px; font-size: 12px; }.mobile-nav a:last-child { border: 0; }.hero { display: flex; flex-direction: column; gap: 42px; padding-top: 36px; padding-bottom: 58px; }.hero-copy { padding: 0; }.hero-meta { margin-top: 39px; font-size: 8px; }.hero-logo-panel img { aspect-ratio: 1.28; }.intro { grid-template-columns: 1fr; gap: 0; }.intro > div { border-right: 0; border-bottom: 1px solid var(--line); padding: 15px 5px; }.intro > div:last-child { border-bottom: 0; }.catalogue { padding-top: 85px; padding-bottom: 92px; }.section-heading { display: block; margin-bottom: 35px; }.section-heading > p { margin-top: 18px; text-align: left; }.catalogue-tools { display: block; }.category-tabs { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 8px; margin-bottom: 17px; }.category-button { white-space: nowrap; }.search-field { width: 100%; }.product-grid { gap: 31px 11px; }.product-info h3 { font-size: 21px; }.product-price { font-size: 13px; }.mavie-section { display: flex; flex-direction: column; gap: 40px; padding-top: 60px; padding-bottom: 90px; }.mavie-copy { width: 100%; }.contact { display: block; padding-top: 61px; padding-bottom: 65px; }.contact h2 { margin-bottom: 34px; }.contact-copy { max-width: 100%; }.footer-main { display: block; padding-top: 30px; padding-bottom: 28px; }.footer-main p { margin: 21px 0; }.footer-links { justify-content: flex-start; flex-wrap: wrap; gap: 16px 21px; }.footer-bottom { font-size: 8px; }.product-dialog { display: block; max-height: calc(100vh - 32px); }.dialog-image img { aspect-ratio: 1.335; }.dialog-info { padding: 31px 24px 36px; }.dialog-info h2 { font-size: 51px; }.dialog-close { color: var(--ink); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }</style>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </head>
+  <body>
+    <a class="skip-link" href="#catalogo">Saltar al catálogo</a>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Mavie Beauty, inicio" style="position: relative; z-index: 10;">
+        <img src="https://htmldrag-001.oss-us-east-1.aliyuncs.com/dev/images/2026/09/12/cifhvcpb.webp" alt="Mavie Beauty" style="position: relative; user-select: none;">
+      </a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#catalogo">Catálogo</a>
+        
+      </nav>
+      <div class="header-actions">
+        <button class="search-trigger" id="searchTrigger" type="button" aria-label="Buscar producto" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
+          <span>Buscar</span>
+        </button>
+        <button class="menu-trigger" id="menuTrigger" type="button" aria-label="Abrir menú" aria-controls="mobileNav" aria-expanded="false"><span></span><span></span></button>
+      </div>
+      <nav class="mobile-nav" id="mobileNav" aria-label="Navegación móvil">
+        <a href="#catalogo">Catálogo</a><a href="#mavie">Mavie</a><a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+    <main id="inicio" style="position: relative; transition: all;">
+      <section class="hero page-width" style="transition: all;">
+        <div class="hero-copy" style="transition: all;">
+          <p class="kicker" style="transition: all;">MAVIE BEAUTY <span style="transition: all;">·</span> CATÁLOGO ONLINE</p>
+          <h1 style="transition: all;">Tu belleza,<br style="transition: all;"><em style="transition: all;">a tu manera.</em></h1>
+          <p style="transition: all;">Descubre nuestra selección de maquillaje y cuidado para crear looks que se sienten como tú.</p>
+          <a class="primary-button" href="#catalogo" style="transition: transform 0.2s, opacity 0.2s;">Explorar productos <span style="transition: all;">↗</span></a>
+          <div class="hero-meta" style="transition: all;"><span style="transition: all;">23 productos</span><i style="transition: all;"></i></div>
+        </div>
+        <div class="hero-logo-panel" style="transition: all;">
+          <img src="assets/page-01.jpg" alt="Logo de Mavie Beauty sobre fondo marfil">
+          <div class="hero-label" style="transition: all;"><span style="transition: all;">01</span><span style="transition: all;">Beauty, a tu manera</span></div>
+        </div>
+      </section>
+      <section class="intro page-width" aria-label="Información del catálogo" style="transition: all;">
+        <div style="transition: all;"><span class="intro-number" style="transition: all;">01</span><p style="transition: all;">Maquillaje para<br style="transition: all;">cada versión de ti.</p></div>
+        <div style="transition: all;"><span class="intro-number" style="transition: all;">02</span><p style="transition: all;">Productos elegidos<br style="transition: all;">con intención.</p></div>
+        <div style="transition: all;"><span class="intro-number" style="transition: all;">03</span><p style="transition: all;">Tu próximo favorito<br style="transition: all;">está aquí.</p></div>
+      </section>
+      <section class="catalogue page-width" id="catalogo" aria-labelledby="catalogueTitle" style="transition: all;">
+        <div class="section-heading" style="transition: all;">
+          <div style="transition: all;"><p class="kicker" style="transition: all;">MAVIE BEAUTY</p><h2 id="catalogueTitle" style="transition: all;">Catálogo</h2></div>
+          
+        </div>
+        <div class="catalogue-tools" style="transition: all;">
+          <div class="category-tabs" id="categoryTabs" role="group" aria-label="Filtrar productos" style="transition: all;"><button class="category-button active" type="button" data-category="Todos" style="transition: all;">Todos<span style="transition: all;">23</span></button><button class="category-button" type="button" data-category="Correctores" style="transition: all;">Correctores<span style="transition: all;">05</span></button><button class="category-button" type="button" data-category="Ojos" style="transition: all;">Ojos<span style="transition: all;">03</span></button><button class="category-button" type="button" data-category="Rostro" style="transition: all;">Rostro<span style="transition: all;">03</span></button><button class="category-button" type="button" data-category="Labios" style="transition: all;">Labios<span style="transition: all;">08</span></button><button class="category-button" type="button" data-category="Bases" style="transition: all;">Bases<span style="transition: all;">02</span></button><button class="category-button" type="button" data-category="Cuidado" style="transition: all;">Cuidado<span style="transition: all;">01</span></button><button class="category-button" type="button" data-category="Preparación" style="transition: all;">Preparación<span style="transition: all;">01</span></button></div>
+          <label class="search-field" style="transition: all;"><span class="sr-only" style="transition: all;">Buscar en el catálogo</span><svg viewBox="0 0 24 24" aria-hidden="true" style="transition: all;"><circle cx="10.8" cy="10.8" r="6.8" style="transition: all;"></circle><path d="m16 16 5 5" style="transition: all;"></path></svg><input id="productSearch" type="search" placeholder="Buscar producto..." autocomplete="off" value="" style="transition: all;"></label>
+        </div>
+        <div class="product-grid" id="productGrid" style="transition: all;">
+    <article class="product-card" role="button" data-page="2">
+      <div class="product-image-wrap" style="transition: all;"><img loading="lazy" src="https://htmldrag-001.oss-us-east-1.aliyuncs.com/dev/images/2026/09/12/wla9k791.webp" alt="e.l.f. Soft Glam Satin Concealer" style="position: relative; transform: none; left: 0px; top: 0px; width: 100%; height: 100%; object-fit: contain !important; max-width: none !important; max-height: none !important; margin: 0px !important;"><span class="product-page" style="transition: all;">01</span></div>
+      <div class="product-info" style="transition: all;"><div style="transition: all;"><h3 style="transition: all;">e.l.f. Soft Glam Satin Concealer</h3><p class="product-category" style="transition: all;">Correctores</p></div></div>
+    </article>
+    <article class="product-card" role="button" data-page="3">
+      <div class="product-image-wrap" style="transition: all;"><img loading="lazy" src="https://htmldrag-001.oss-us-east-1.aliyuncs.com/dev/images/2026/09/12/c58i2dva.webp" alt="L'Oréal Lash Paradise Big Deal Mascara" style="position: relative; transform: none; left: 0px; top: 0px; width: 100%; height: 100%; object-fit: contain !important; max-width: none !important; max-height: none !important; margin: 0px !important;"><span class="product-page" style="transition: all;">02</span></div>
+      <div class="product-info" style="transition: all;"><div style="transition: all;"><h3 style="transition: all;">L'Oréal Lash Paradise Big Deal Mascara</h3><p class="product-category" style="transition: all;">Ojos</p></div></div>
+    </article>
+    <article class="product-card" role="button" data-page="4">
+      <div class="product-image-wrap" style="transition: all; cursor: pointer;"><img loading="lazy" src="https://htmldrag-001.oss-us-east-1.aliyuncs.com/dev/images/2026/09/12/cvvf1u7r.webp" alt="L'Oréal Telescopic Original Mascara" style="position: relative; transform: none; left: 0px; top: 0px; width: 100%; height: 100%; object-fit: contain !important; max-width: none !important; max-height: none !important; margin: 0px !important;"><span class="product-page" style="transition: all;">03</span></div>
+      <div class="product-info" style="transition: all;"><div style="transition: all;"><h3 style="transition: all;">L'Oréal Telescopic Original Mascara</h3><p class="product-category" style="transition: all;">Ojos</p></div></div>
+    </article>
+    <article class="product-card" role="button" data-page="5">
+      <div class="product-image-wrap" style="transition: all; cursor: pointer;"><img loading="lazy" src="https://htmldrag-001.oss-us-east-1.aliyuncs.com/dev/images/2026/09/12/dxrpo9nh.webp" alt="e.l.f. Camo Liquid Blush" style="position: relative; transform: none; left: 0px; top: 0px; width: 100%; height: 100%; object-fit: contain !important; max-width: none !important; max-height: none !important; margin: 0px !important;"><span class="product-page" style="transition: all;">04</span></div>
+      <div class="product-info" style="transition: all;"><div style="transition: all;"><h3 style="transition: all;">e.l.f. Camo Liquid Blush</h3><p class="product-category" style="transition: all;">Rostro</p></div></div>
+    </article>
+    <article class="product-card" role="button" data-page="6">
+      <div class="product-image-wrap" style="transition: all;"><img loading="lazy" src="https://htmldrag-001.oss-us-east-1.aliyuncs.com/dev/images/2026/09/12/q724hqjs.webp" alt="e.l.f. Soft Glam Cream Blush Stick" style="position: relative; transform: none; left: 0px; top: 0px; width: 100%; height: 100%; object-fit: contain !important; max-width: none !important; max-height: none !important; margin: 0px !important;"><span class="product-page" style="transition: all;">05</span></div>
+      <div class="product-info" style="transition: all;"><div style="transition: all;"><h3 style="transition: all;">e.l.f. Soft Glam Cream Blush Stick</h3><p class="product-category" style="transition: all;">Rostro</p></div></div>
+    </article>
+    <article class="product-card" role="button" data-page="7">
+      <div class="product-image-wrap" style="transition: all;"><img loading="lazy" src="https://htmldrag-001.oss-us-east-1.aliyuncs.com/dev/images/2026/09/12/2734kp51.webp" alt="NYX Lip Liner / Lipstick" style="position: relative; transform: none; left: 0px; top: 0px; width: 100%; height: 100%; object-fit: contain !important; max-width: none !important; max-height: none !important; margin: 0px !important;"><span class="product-page" style="transition: all;">06</span></div>
+      <div class="product-info" style="transition: all;"><div style="transition: all;"><h3 style="transition: all;">NYX Lip Liner / Lipstick</h3><p class="product-category" style="transition: all;">Labios</p></div></div>
+    </article>
+    <article class="product-card" role="button" data-page="8">
+      <div class="product-image-wrap" style="transition: all;"><img loading="lazy" src="https://htmldrag-001.oss-us-east-1.aliyuncs.com/dev/images/2026/09/12/csvndkov.webp" alt="L'Oréal Infallible Plump Ambition Lip Oil" style="position: relative;"><span class="product-page" style="transition: all;">07</span></div>
+      <div class="product-info" style="transition: all;"><div style="transition: all;"><h3 style="transition: all;">L'Oréal Infallible Plump Ambition Lip Oil</h3><p class="product-category" style="transition: all;">Labios</p></div></div>
+    </article>
+    <article class="product-card" role="button" data-page="9" style="position: relative;">
+      <div class="product-image-wrap" style="transition: all; position: relative; overflow: visible !important;"><img loading="lazy" src="https://htmldrag-001.oss-us-east-1.aliyuncs.com/dev/images/2026/09/12/1gam714g.webp" alt="NYX Duck Plump Extreme Sensation Lip Gloss" style="position: relative; user-select: none;"><span class="product-page" style="transition: all;">08</span></div>
+      <div class="product-info" style="transition: all;"><div style="transition: all;"><h3 style="transition: all;">NYX Duck Plump Extreme Sensation Lip Gloss</h3><p class="product-category" style="transition: all;">Labios</p></div></div>
+    </article>
+    <article class="product-card" role="button" data-page="10">
+      <div class="product-image-wrap" style="transition: all; cursor: pointer;"><img loading="lazy" src="https://htmldrag-001.oss-us-east-1.aliyuncs.com/dev/images/2026/09/12/0n5z747y.webp" alt="NYX Fat Oil Lip Drip" style="position: relative; transform: none; left: 0px; top: 0px; width: 100%; height: 100%; object-fit: contain !important; max-width: none !important; max-height: none !important; margin: 0px !important;"><span class="product-page" style="transition: all;">09</span></div>
+      <div class="product-info" style="transition: all;"><div style="transition: all;"><h3 style="transition: all;">NYX Fat Oil Lip Drip</h3><p class="product-category" style="transition: all;">Labios</p></div></div>
+    </article>
+    <article class="product-card" role="button" data-page="11" style="position: relative;">
+      <div class="product-image-wrap" style="transition: all; position: relative; overflow: visible !important;"><img loading="lazy" src="https://htmldrag-001.oss-us-east-1.aliyuncs.com/dev/images/2026/09/12/cpfl3i22.webp" alt="Maybelline Lash Sensational Mascara" style="position: relative; user-select: none;"><span class="product-page" style="transition: all;">10</span></div>
+      <div class="product-info" style="transition: all;"><div style="transition: all;"><h3 style="transition: all;">Maybelline Lash Sensational Mascara</h3><p class="product-category" style="transition: all;">Ojos</p></div></div>
+    </article>
+    <article class="product-card" role="button" data-page="12">
+      <div class="product-image-wrap" style="transition: all;"><img loading="lazy" src="https://htmldrag-001.oss-us-east-1.aliyuncs.com/dev/images/2026/09/12/dsw4dy01.webp" alt="L'Oréal Infallible 24H Full Wear Concealer" style="position: relative; transform: none; left: 0px; top: 0px; width: 100%; height: 100%; object-fit: contain !important; max-width: none !important; max-height: none !important; margin: 0px !important;"><span class="product-page" style="transition: all;">11</span></div>
+      <div class="product-info" style="transition: all;"><div style="transition: all;"><h3 style="transition: all;">L'Oréal Infallible 24H Full Wear Concealer</h3><p class="product-category" style="transition: all;">Correctores</p></div></div>
+    </article>
+    <article class="product-card" role="button" data-page="13">
+      <div class="product-image-wrap" style="transition: all;"><img loading="lazy" src="https://htmldrag-001.oss-us-east-1.aliyuncs.com/dev/images/2026/09/12/0jxlgmnm.webp" alt="e.l.f. Halo Glow Liquid Filter" style="position: relative; transform: none; left: 0px; top: 0px; width: 100%; height: 100%; object-fit: contain !important; max-width: none !important; max-height: none !important; margin: 0px !important;"><span class="product-page" style="transition: all;">12</span></div>
+      <div class="product-info" style="transition: all;"><div style="transition: all;"><h3 style="transition: all;">e.l.f. Halo Glow Liquid Filter</h3><p class="product-category" style="transition: all;">Rostro</p></div></div>
+    </article>
+    <article class="product-card" role="button" data-page="14">
+      <div class="product-image-wrap" style="transition: all;"><img loading="lazy" src="https://htmldrag-001.oss-us-east-1.aliyuncs.com/dev/images/2026/09/12/j017sh68.webp" alt="e.l.f. Soft Glam Satin Foundation" style="position: relative; transform: none; left: 0px; top: 0px; width: 100%; height: 100%; object-fit: contain !important; max-width: none !important; max-height: none !important; margin: 0px !important;"><span class="product-page" style="transition: all;">13</span></div>
+      <div class="product-info" style="transition: all;"><div style="transition: all;"><h3 style="transition: all;">e.l.f. Soft Glam Satin Foundation</h3><p class="product-category" style="transition: all;">Bases</p></div></div>
+    </article>
+    <article class="product-card" role="button" data-page="15">
+      <div class="product-image-wrap" style="transition: all; cursor: pointer;"><img loading="lazy" src="https://htmldrag-001.oss-us-east-1.aliyuncs.com/dev/images/2026/09/12/fr0bj00s.webp" alt="L'Oréal True Match Radiant Concealer" style="position: relative; transform: none; left: 0px; top: 0px; width: 100%; height: 100%; object-fit: contain !important; max-width: none !important; max-height: none !important; margin: 0px !important;"><span class="product-page" style="transition: all;">14</span></div>
+      <div class="product-info" style="transition: all;"><div style="transition: all;"><h3 style="transition: all;">L'Oréal True Match Radiant Concealer</h3><p class="product-category" style="transition: all;">Correctores</p></div></div>
+    </article>
+    <article class="product-card" role="button" data-page="16">
+      <div class="product-image-wrap" style="transition: all;"><img loading="lazy" src="https://htmldrag-001.oss-us-east-1.aliyuncs.com/dev/images/2026/09/12/aktuyrtw.webp" alt="Maybelline Instant Age Rewind Eraser" style="position: relative; transform: none; left: 0px; top: 0px; width: 100%; height: 100%; object-fit: contain !important; max-width: none !important; max-height: none !important; margin: 0px !important;"><span class="product-page" style="transition: all;">15</span></div>
+      <div class="product-info" style="transition: all;"><div style="transition: all;"><h3 style="transition: all;">Maybelline Instant Age Rewind Eraser</h3><p class="product-category" style="transition: all;">Correctores</p></div></div>
+    </article>
+    <article class="product-card" role="button" data-page="17">
+      <div class="product-image-wrap" style="transition: all;"><img loading="lazy" src="https://htmldrag-001.oss-us-east-1.aliyuncs.com/dev/images/2026/09/12/e1w34rho.webp" alt="Maybelline Fit Me Concealer" style="position: relative; transform: none; left: 0px; top: 0px; width: 100%; height: 100%; object-fit: contain !important; max-width: none !important; max-height: none !important; margin: 0px !important;"><span class="product-page" style="transition: all;">16</span></div>
+      <div class="product-info" style="transition: all;"><div style="transition: all;"><h3 style="transition: all;">Maybelline Fit Me Concealer</h3><p class="product-category" style="transition: all;">Correctores</p></div></div>
+    </article>
+    <article class="product-card" role="button" data-page="18" style="position: relative; transition: all; cursor: pointer; width: 289px !important; height: 320px !important; transform: none; left: 0px; top: 0px;">
+      <div class="product-image-wrap" style="transition: all; display: block !important; width: 100% !important; height: auto !important; margin: 0px !important; padding: 0px !important; border-width: medium !important; border-style: none !important; border-color: currentcolor !important; border-image: none !important; box-sizing: border-box !important;"><img loading="lazy" src="https://htmldrag-001.oss-us-east-1.aliyuncs.com/dev/images/2026/09/12/d9s71r72.webp" alt="e.l.f. Glow Reviver Plumping Lip Oil" style="position: relative; transition: transform 0.4s; object-fit: contain !important; width: 100% !important; height: 100% !important; max-width: none !important; max-height: none !important; margin: 0px !important;"><span class="product-page" style="transition: all;">17</span></div>
+      <div class="product-info" style="transition: all;"><div style="transition: all;"><h3 style="transition: all;">e.l.f. Glow Reviver Plumping Lip Oil</h3><p class="product-category" style="transition: all;">Labios</p></div></div>
+    </article>
+    <article class="product-card" role="button" data-page="19">
+      <div class="product-image-wrap" style="transition: all;"><img loading="lazy" src="https://htmldrag-001.oss-us-east-1.aliyuncs.com/dev/images/2026/09/12/q7buhona.webp" alt="Maybelline Lifter Gloss" style="position: relative; transform: none; left: 0px; top: 0px; width: 100%; height: 100%; object-fit: contain !important; max-width: none !important; max-height: none !important; margin: 0px !important;"><span class="product-page" style="transition: all;">18</span></div>
+      <div class="product-info" style="transition: all;"><div style="transition: all;"><h3 style="transition: all;">Maybelline Lifter Gloss</h3><p class="product-category" style="transition: all;">Labios</p></div></div>
+    </article>
+    <article class="product-card" role="button" data-page="20">
+      <div class="product-image-wrap" style="transition: all;"><img loading="lazy" src="https://htmldrag-001.oss-us-east-1.aliyuncs.com/dev/images/2026/09/12/urr8x61f.webp" alt="L'Oréal Infallible 32H Fresh Wear Foundation" style="position: relative; transform: none; left: 0px; top: 0px; width: 100%; height: 100%; object-fit: contain !important; max-width: none !important; max-height: none !important; margin: 0px !important;"><span class="product-page" style="transition: all;">19</span></div>
+      <div class="product-info" style="transition: all;"><div style="transition: all;"><h3 style="transition: all;">L'Oréal Infallible 32H Fresh Wear Foundation</h3><p class="product-category" style="transition: all;">Bases</p></div></div>
+    </article>
+    <article class="product-card" role="button" data-page="21">
+      <div class="product-image-wrap" style="transition: all;"><img loading="lazy" src="https://htmldrag-001.oss-us-east-1.aliyuncs.com/dev/images/2026/09/12/j806da5q.webp" alt="NYX Butter Gloss Non-Sticky Lip Gloss" style="position: relative;"><span class="product-page" style="transition: all;">20</span></div>
+      <div class="product-info" style="transition: all;"><div style="transition: all;"><h3 style="transition: all;">NYX Butter Gloss Non-Sticky Lip Gloss</h3><p class="product-category" style="transition: all;">Labios</p></div></div>
+    </article>
+    <article class="product-card" role="button" data-page="22">
+      <div class="product-image-wrap" style="transition: all;"><img loading="lazy" src="https://htmldrag-001.oss-us-east-1.aliyuncs.com/dev/images/2026/09/12/kr7cqfyj.webp" alt="L'Oréal Infallible Matte Resistance Liquid Lipstick" style="position: relative;"><span class="product-page" style="transition: all;">21</span></div>
+      <div class="product-info" style="transition: all;"><div style="transition: all;"><h3 style="transition: all;">L'Oréal Infallible Matte Resistance Liquid Lipstick</h3><p class="product-category" style="transition: all;">Labios</p></div></div>
+    </article>
+    <article class="product-card" role="button" data-page="23">
+      <div class="product-image-wrap" style="transition: all;"><img loading="lazy" src="https://htmldrag-001.oss-us-east-1.aliyuncs.com/dev/images/2026/09/12/bq9qeq6x.webp" alt="Starface Hydro-Star Pimple Patches" style="position: relative; transform: none; left: 0px; top: 0px; width: 100%; height: 100%; object-fit: contain !important; max-width: none !important; max-height: none !important; margin: 0px !important;"><span class="product-page" style="transition: all;">22</span></div>
+      <div class="product-info" style="transition: all;"><div style="transition: all;"><h3 style="transition: all;">Starface Hydro-Star Pimple Patches</h3><p class="product-category" style="transition: all;">Cuidado</p></div></div>
+    </article>
+    <article class="product-card" role="button" data-page="24">
+      <div class="product-image-wrap" style="transition: all; cursor: pointer;"><img loading="lazy" src="https://htmldrag-001.oss-us-east-1.aliyuncs.com/dev/images/2026/09/12/26m81rqj.webp" alt="e.l.f. Power Grip Matte Primer" style="position: relative; transform: none; left: 0px; top: 0px; width: 100%; height: 100%; object-fit: contain !important; max-width: none !important; max-height: none !important; margin: 0px !important;"><span class="product-page" style="transition: all;">23</span></div>
+      <div class="product-info" style="transition: all;"><div style="transition: all;"><h3 style="transition: all;">e.l.f. Power Grip Matte Primer</h3><p class="product-category" style="transition: all;">Preparación</p></div></div>
+    </article>
+  </div>
+        <p class="empty-state" id="emptyState" hidden="" style="transition: all;">No encontramos ese producto. Intenta con otro nombre.</p>
+      </section>
+      <section class="mavie-section page-width" id="mavie" aria-labelledby="mavieTitle" style="transition: all;">
+        <div class="mavie-copy" style="transition: all;"></div>
+      </section>
+      <section class="contact page-width" id="contacto" style="transition: all;">
+        <div style="transition: all;"></div>
+        <div class="contact-copy" style="transition: all;"></div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-main page-width"><p>Tu belleza, a tu manera.</p><div class="footer-links"><a href="#catalogo">Catálogo</a></div></div>
+      <div class="footer-bottom page-width"><span>© 2026 Mavie Beauty</span><span style="transition: all; position: relative; z-index: 0;">Catálogo online</span></div>
+    </footer>
+    <div class="search-overlay" id="searchOverlay" aria-hidden="true">
+      <div class="search-dialog" role="dialog" aria-modal="true" aria-labelledby="searchTitle"><div class="dialog-top"><span id="searchTitle">Buscar en Mavie</span><button id="closeSearch" type="button" aria-label="Cerrar búsqueda">×</button></div><input id="overlaySearch" type="search" placeholder="Nombre del producto..." autocomplete="off" value=""></div>
+    </div>
+    <div class="product-overlay" id="productOverlay" aria-hidden="true">
+      <div class="product-dialog" role="dialog" aria-modal="true" aria-labelledby="productTitle">
+        <button class="dialog-close" id="closeProduct" type="button" aria-label="Cerrar producto">×</button>
+        <div class="dialog-image" style="position: relative; z-index: 10; left: -285.25px; top: 377.906px;"><img id="productImage" src="https://htmldrag-001.oss-us-east-1.aliyuncs.com/dev/images/2026/09/12/xyk8qvek.webp" alt="" style="position: relative;"></div>
+        <div class="dialog-info"><p class="kicker" id="productCategory">MAVIE BEAUTY</p><h2 id="productTitle"></h2><p id="productDescription"></p><a class="primary-button" href="#contacto" id="productContact">Consultar disponibilidad <span>↗</span></a></div>
+      </div>
+    </div>
+</body></html>
