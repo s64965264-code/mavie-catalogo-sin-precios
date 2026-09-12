@@ -10,6 +10,7 @@
   const productDescription = document.getElementById('productDescription');
   const productContact = document.getElementById('productContact');
   let selectedProduct = null;
+  const hasPrices = Boolean(document.querySelector('.product-price'));
   function syncLock() { const cartOpen = document.getElementById('cartOverlay')?.classList.contains('open'); const productOpen = overlay?.classList.contains('open'); document.body.classList.toggle('locked', Boolean(cartOpen || productOpen)); }
   function closeProductDialog() { if (!overlay) return; overlay.classList.remove('open'); overlay.setAttribute('aria-hidden', 'true'); syncLock(); }
   function openProduct(card) {
@@ -21,6 +22,12 @@
   }
   cards.forEach(card => { card.tabIndex = 0; card.addEventListener('click', () => openProduct(card)); card.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openProduct(card); } }); });
   closeProduct?.addEventListener('click', closeProductDialog); overlay?.addEventListener('click', event => { if (event.target === overlay) closeProductDialog(); });
+  if (hasPrices) {
+    const headerActions = document.querySelector('.header-actions');
+    if (headerActions) { const button = document.createElement('button'); button.className = 'cart-trigger'; button.id = 'cartTrigger'; button.type = 'button'; button.setAttribute('aria-label', 'Abrir carrito'); button.innerHTML = 'Carrito <span class="cart-count" id="cartCount">0</span>'; headerActions.appendChild(button); }
+    if (productContact) { const button = document.createElement('button'); button.className = 'primary-button cart-add-button'; button.id = 'addToCart'; button.type = 'button'; button.innerHTML = 'Agregar al carrito <span>+</span>'; productContact.after(button); }
+    document.body.insertAdjacentHTML('beforeend', '<div class="cart-overlay" id="cartOverlay" aria-hidden="true"><aside class="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle"><div class="cart-drawer-header"><h2 id="cartTitle">Carrito</h2><button class="cart-close" id="closeCart" type="button" aria-label="Cerrar carrito">×</button></div><div class="cart-items" id="cartItems"></div><div class="cart-summary"><div class="cart-total"><span>Total</span><strong id="cartTotal">Q0</strong></div><button class="cart-clear" id="clearCart" type="button">Vaciar carrito</button></div></aside></div>');
+  }
   const addToCart = document.getElementById('addToCart'); const cartOverlay = document.getElementById('cartOverlay'); const cartItems = document.getElementById('cartItems'); const cartCount = document.getElementById('cartCount'); const cartTotal = document.getElementById('cartTotal'); const cartTrigger = document.getElementById('cartTrigger'); const closeCart = document.getElementById('closeCart'); const clearCart = document.getElementById('clearCart');
   let cart = []; try { cart = JSON.parse(localStorage.getItem('mavie-cart') || '[]'); } catch (_) { cart = []; }
   function saveCart() { try { localStorage.setItem('mavie-cart', JSON.stringify(cart)); } catch (_) {} }
