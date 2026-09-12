@@ -1,0 +1,26 @@
+
+.dialog-info #productDescription { max-width: 34em; }
+.cart-trigger { display: inline-flex; align-items: center; gap: 7px; border: 0; padding: 0; background: transparent; color: #59534e; cursor: pointer; font-size: 11px; }
+.cart-trigger:hover { opacity: .58; }
+.cart-count { display: inline-grid; min-width: 19px; height: 19px; place-items: center; border-radius: 50%; background: var(--ink); color: var(--cream); font-size: 9px; font-weight: 600; }
+.cart-add-button { margin-top: 12px; cursor: pointer; }
+.cart-overlay { position: fixed; z-index: 40; inset: 0; display: flex; justify-content: flex-end; background: rgba(5,5,5,.58); opacity: 0; pointer-events: none; transition: opacity .2s ease; }
+.cart-overlay.open { opacity: 1; pointer-events: auto; }
+.cart-drawer { display: flex; width: min(100%, 430px); height: 100%; flex-direction: column; padding: 28px 30px; background: var(--cream); transform: translateX(18px); transition: transform .2s ease; }
+.cart-overlay.open .cart-drawer { transform: translateX(0); }
+.cart-drawer-header { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); padding-bottom: 20px; }
+.cart-drawer-header h2 { font-size: 45px; }
+.cart-close { border: 0; background: transparent; cursor: pointer; font-size: 27px; line-height: 1; }
+.cart-items { flex: 1; overflow: auto; padding: 18px 0; }
+.cart-empty { color: var(--muted); font-size: 12px; line-height: 1.7; }
+.cart-item { display: grid; grid-template-columns: 58px 1fr auto; gap: 12px; align-items: center; border-bottom: 1px solid var(--line); padding: 0 0 15px; margin-bottom: 15px; }
+.cart-item-image { width: 58px; height: 65px; object-fit: contain; background: var(--cream-deep); }
+.cart-item-title { margin: 0 0 4px; font: 500 18px/1.05 "Cormorant Garamond", Georgia, serif; }
+.cart-item-price { margin: 0; color: var(--muted); font-size: 10px; }
+.cart-item-controls { display: flex; align-items: center; gap: 8px; margin-top: 9px; }
+.cart-item-controls button { width: 22px; height: 22px; border: 1px solid var(--line); background: transparent; cursor: pointer; line-height: 1; }
+.cart-item-remove { border: 0 !important; color: var(--muted); font-size: 15px; }
+.cart-summary { border-top: 1px solid var(--ink); padding-top: 17px; }
+.cart-total { display: flex; justify-content: space-between; margin-bottom: 17px; font: 22px "Cormorant Garamond", Georgia, serif; }
+.cart-clear { width: 100%; border: 0; margin-top: 12px; padding: 10px; background: transparent; color: var(--muted); cursor: pointer; font-size: 10px; }
+@media (max-width: 620px) { .cart-trigger { font-size: 0; } .cart-trigger .cart-count { font-size: 9px; } .cart-drawer { padding: 24px 20px; } .cart-drawer-header h2 { font-size: 42px; } }
