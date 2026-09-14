@@ -111,7 +111,7 @@ h1, h2 { margin: 0; font-family: "Cormorant Garamond", Georgia, serif; font-weig
         
         
       </head>
-  <body>
+<body data-mavie-catalog="no-prices">
     <a class="skip-link" href="#catalogo">Saltar al catálogo</a>
     <header class="site-header">
       <a class="brand" href="#inicio" aria-label="Mavie Beauty, inicio" style="position: relative; z-index: 10;">
@@ -130,6 +130,8 @@ h1, h2 { margin: 0; font-family: "Cormorant Garamond", Georgia, serif; font-weig
       </div>
       <nav class="mobile-nav" id="mobileNav" aria-label="Navegación móvil">
         <a href="#catalogo">Catálogo</a><a href="#mavie">Mavie</a><a href="#contacto">Contacto</a>
+        <button type="button" data-menu-action="search">Buscar</button>
+        <button type="button" data-menu-action="admin">Administrador</button>
       </nav>
     </header>
     <main id="inicio" style="position: relative; transition: all;">
@@ -279,4 +281,5 @@ h1, h2 { margin: 0; font-family: "Cormorant Garamond", Georgia, serif; font-weig
       </div>
     </div>
 <script src="mavie-features.js"></script>
+<script src="admin-api.js"></script>
 </body></html>
