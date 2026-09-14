@@ -83,6 +83,7 @@
 .admin-form .primary-button { width: max-content; margin-top: 10px; cursor: pointer; }
 .admin-form .primary-button:disabled, .admin-product-row button:disabled { cursor: wait; opacity: .5; }
 .admin-error { margin: 8px 0 0; color: #8d3c2f; font-size: 11px; }
+.admin-product-section-label { margin-top: 27px; padding: 0 0 9px; color: var(--muted); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
 .admin-product-list { border-top: 1px solid var(--line); }
 .admin-product-row { display: flex; align-items: center; justify-content: space-between; gap: 15px; border-bottom: 1px solid var(--line); padding: 13px 0; }
 .admin-product-row span { display: flex; align-items: baseline; gap: 12px; min-width: 0; font: 500 20px/1.05 "Cormorant Garamond", Georgia, serif; }
