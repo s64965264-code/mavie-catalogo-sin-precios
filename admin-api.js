@@ -1,5 +1,5 @@
 (() => {
-  const API_BASE = "https://mavie-catalogo-backend--dumpsss70.replit.app";
+  const API_BASE = "https://mavie-admin-backend--s64965264.replit.app";
   const catalog = document.body.dataset.mavieCatalog || "no-prices";
   const searchOverlay = document.getElementById("searchOverlay");
   const overlaySearch = document.getElementById("overlaySearch");
